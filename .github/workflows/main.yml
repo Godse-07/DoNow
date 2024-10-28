@@ -34,14 +34,7 @@ jobs:
 
       # Build steps
       - run: flutter build apk --release --split-per-abi
-      - run: |
-          flutter build ios --no-codesign
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
+
 
       # Release step
       - name: Push to Releases
